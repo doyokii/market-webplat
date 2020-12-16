@@ -1,0 +1,35 @@
+# ���ö˿�
+spring:
+  datasource:
+    url: jdbc:mysql://192.168.203.234:3306/webplat?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=false&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull&allowPublicKeyRetrieval=true
+    username: platuser
+    password: platuser
+    driver-class-name: com.mysql.cj.jdbc.Driver
+server.port: 8088
+
+mybatis:
+  type-aliases-package: com.example.web.mapper
+  mapper-locations: classpath:mapper/mysql/*.xml
+  #mybatis.config-location:classpath:mybatis/mybatis-config.xml
+  configuration.map-underscore-to-camel-case: true
+
+#jwt
+jwt:
+  header: Authorization
+  # 令牌前缀
+  token-start-with: Bearer
+  # 使用Base64对该令牌进行编码
+  base64-secret:
+  # 令牌过期时间 此处单位/毫秒
+  token-validity-in-seconds: 14400000
+
+security:
+  basic:
+    enabled: false
+debug: true
+
+
+
+
+
+
