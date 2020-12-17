@@ -24,6 +24,7 @@ public class JwtAuthenticationProvider extends DaoAuthenticationProvider {
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
     	// 可以在此处覆写整个登录认证逻辑
     	return super.authenticate(authentication);
+
     }
     
     @Override

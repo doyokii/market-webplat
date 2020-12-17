@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.louis.springboot.demo.security.JwtAuthenticatioToken;
@@ -20,6 +21,7 @@ import com.louis.springboot.demo.vo.LoginBean;
  * @date Jun 29, 2019
  */
 @RestController
+@RequestMapping(value = "/loginRest")
 public class LoginController {
 
     @Autowired

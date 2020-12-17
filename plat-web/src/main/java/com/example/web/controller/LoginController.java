@@ -1,16 +1,17 @@
 package com.example.web.controller;
 
 import com.example.web.entity.UserInfo;
-import com.example.web.security.TokenUtils;
+import com.example.web.jwt.JwtAuthenticatioToken;
 import com.example.web.service.impl.LoginService;
-import com.google.gson.Gson;
+import com.example.web.utils.SecurityUtils;
+import com.example.web.vo.HttpResult;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import jdk.nashorn.internal.runtime.JSONFunctions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Map;
+import javax.servlet.http.HttpServletRequest;
 
 
 /**
@@ -25,17 +26,19 @@ import java.util.Map;
 public class LoginController {
 
     @Autowired
-    private LoginService loginService;
+    private AuthenticationManager authenticationManager;
+
     @Autowired
-    private TokenUtils tokenUtils;
+    private LoginService loginService;
+
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     @ApiOperation(value = "登录")
-//    public String login(@RequestParam Map<String, Object> params) {
-    public String login(@RequestBody UserInfo user) {
-//        String s = new Gson().toJson(params);
-//        UserInfo user = new Gson().fromJson(s, UserInfo.class);
-        loginService.login(user);
-        return tokenUtils.createToken(user);
+    public HttpResult login(@RequestBody UserInfo userInfo, HttpServletRequest request) {
+        String username = userInfo.getUsername();
+        String password = userInfo.getPassword();
+        // 系统登录认证
+        JwtAuthenticatioToken token = SecurityUtils.login(request, username, password, authenticationManager);
+        return HttpResult.ok(token);
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)

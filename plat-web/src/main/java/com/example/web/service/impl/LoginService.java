@@ -47,4 +47,11 @@ public class LoginService {
         password = new BCryptPasswordEncoder().encode(password);
         userInfo.setPassword(password);
     }
+
+    public static void main(String[] args) {
+        String lll111222 = new BCryptPasswordEncoder().encode("lll111222");
+        System.out.println(lll111222);
+
+    }
+    
 }

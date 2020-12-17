@@ -11,6 +11,7 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -26,12 +27,14 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
             UserInfo user = loginMapper.findByUsername(username);
+        user.setPassword(new BCryptPasswordEncoder().encode("123"));
+
         if (null == user) {
             logger.debug("用户为空");
             throw new UsernameNotFoundException(username);
         }
         List<SimpleGrantedAuthority> authorities = new ArrayList<>();
-//        authorities.add(new SimpleGrantedAuthority("ROLE_" + user.getRoleIds()));
+        authorities.add(new SimpleGrantedAuthority("ROLE_" + "admin"));
         return new User(user.getUsername(), user.getPassword(), authorities);
     }
 //    private User buildUserFromUserEntity(AppUsers authUsers) {
