@@ -12,7 +12,7 @@ import java.util.UUID;
  * @author : Zhuang Jialong
  * @description :
  * @date : 2020/11/30 下午 5:53
- * @Copyright: Copyright(c)2019 RedaFlight.com All Rights Reserved
+ * @Copyright: Copyright(c)2020 doyokii/market-webplat All Rights Reserved
  */
 @Service
 public class LoginService {
@@ -48,10 +48,5 @@ public class LoginService {
         userInfo.setPassword(password);
     }
 
-    public static void main(String[] args) {
-        String lll111222 = new BCryptPasswordEncoder().encode("lll111222");
-        System.out.println(lll111222);
-
-    }
     
 }

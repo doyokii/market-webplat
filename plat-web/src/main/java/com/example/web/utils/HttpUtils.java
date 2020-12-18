@@ -11,9 +11,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * HTTP工具类
- * @author Louis
- * @date Jun 29, 2019
+ * @author : Zhuang Jialong
+ * @description : HTTP工具类
+ * @date : 2020/12/17 下午 5:15
+ * @Copyright: Copyright(c)2020 doyokii/market-webplat All Rights Reserved
  */
 public class HttpUtils {
 

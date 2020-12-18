@@ -4,11 +4,11 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.GrantedAuthority;
 
 import java.util.Collection;
-
 /**
- * 自定义令牌对象
- * @author Louis
- * @date Jun 29, 2019
+ * @author : Zhuang Jialong
+ * @description : 自定义令牌对象
+ * @date : 2020/12/17 下午 5:14
+ * @Copyright: Copyright(c)2020 doyokii/market-webplat All Rights Reserved
  */
 public class JwtAuthenticatioToken extends UsernamePasswordAuthenticationToken {
 

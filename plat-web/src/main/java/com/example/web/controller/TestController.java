@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author : Zhuang Jialong
  * @description :
  * @date : 2020/12/16 下午 4:00
- * @Copyright: Copyright(c)2019 RedaFlight.com All Rights Reserved
+ * @Copyright: Copyright(c)2020 doyokii/market-webplat All Rights Reserved
  */
 @RestController
 @RequestMapping(value = "/test")

@@ -1,5 +1,6 @@
 package com.example.web.controller;
 
+import com.example.web.entity.BannerInfo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author : Zhuang Jialong
  * @description : Banner处理controller
  * @date : 2020/12/16 下午 4:00
- * @Copyright: Copyright(c)2019 RedaFlight.com All Rights Reserved
+ * @Copyright: Copyright(c)2020 doyokii/market-webplat All Rights Reserved
  */
 @RestController
 @RequestMapping(value = "/banner")
@@ -19,13 +20,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class BannerController {
     /**
      *
-     * @param s
+     * @param
      * @return
      */
     @RequestMapping(value = "/uploadFile", method = RequestMethod.POST)
     @ApiOperation(value = "上传banner页")
-    public String login(@RequestBody String s) {
-        System.out.println("[===============程序执行到此===============]");
+    public String login(@RequestBody BannerInfo banner) {
+
         return "success";
     }
 }

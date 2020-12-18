@@ -16,7 +16,7 @@ import java.util.Map;
  *                 request.getParameter(this.passwordParameter) 该方法为默认get表单获取
  *                 需重写该拦截器的obtainPassword()&obtainUsername()方法 更正为POST9获取
  * @date : 2020/12/8 上午 10:38
- * @Copyright: Copyright(c)2019 RedaFlight.com All Rights Reserved
+ * @Copyright: Copyright(c)2020 doyokii/market-webplat All Rights Reserved
  */
 public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
     private ThreadLocal<Map<String,String>> threadLocal = new ThreadLocal<>();

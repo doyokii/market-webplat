@@ -6,6 +6,7 @@ import com.example.web.service.impl.LoginService;
 import com.example.web.utils.SecurityUtils;
 import com.example.web.vo.HttpResult;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -18,7 +19,7 @@ import javax.servlet.http.HttpServletRequest;
  * @author : Zhuang Jialong
  * @description : 登录控制
  * @date : 2020/11/28 下午 2:25
- * @Copyright: Copyright(c)2019 RedaFlight.com All Rights Reserved
+ * @Copyright: Copyright(c)2020 doyokii/market-webplat All Rights Reserved
  */
 @RestController
 @RequestMapping(value = "/loginRest")

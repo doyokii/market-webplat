@@ -11,7 +11,7 @@ import java.util.UUID;
  * @author : Zhuang Jialong
  * @description : 实体基类
  * @date : 2020/11/24 下午 2:07
- * @Copyright: Copyright(c)2019 RedaFlight.com All Rights Reserved
+ * @Copyright: Copyright(c)2020 doyokii/market-webplat All Rights Reserved
  */
 public abstract class CommonEntity implements Serializable {
     protected String uuid;

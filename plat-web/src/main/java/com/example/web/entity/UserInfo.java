@@ -10,7 +10,7 @@ import java.util.List;
  * @author : Zhuang Jialong
  * @description : 用户信息
  * @date : 2020/11/24 下午 2:06
- * @Copyright: Copyright(c)2019 RedaFlight.com All Rights Reserved
+ * @Copyright: Copyright(c)2020 doyokii/market-webplat All Rights Reserved
  */
 @Data
 public class UserInfo extends CommonEntity {

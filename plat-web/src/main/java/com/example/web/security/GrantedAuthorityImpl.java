@@ -2,9 +2,10 @@ package com.example.web.security;
 import org.springframework.security.core.GrantedAuthority;
 
 /**
- * 权限封装
- * @author Louis
- * @date Jun 29, 2019
+ * @author : Zhuang Jialong
+ * @description :
+ * @date : 2020/12/17 下午 5:13
+ * @Copyright: Copyright(c)2020 doyokii/market-webplat All Rights Reserved
  */
 public class GrantedAuthorityImpl implements GrantedAuthority {
 	

@@ -3,14 +3,12 @@ package com.example.web.config;
 import com.example.web.jwt.JwtAuthenticationFilter;
 import com.example.web.jwt.JwtAuthenticationProvider;
 import com.example.web.jwt.JwtLoginFilter;
-import com.example.web.security.UserDetailsServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -24,7 +22,7 @@ import javax.annotation.Resource;
  * @author : Zhuang Jialong
  * @description :
  * @date : 2020/12/17 下午 2:46
- * @Copyright: Copyright(c)2019 RedaFlight.com All Rights Reserved
+ * @Copyright: Copyright(c)2020 doyokii/market-webplat All Rights Reserved
  */
 @Configuration
 @EnableWebSecurity
@@ -61,7 +59,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 // 跨域预检请求
                 .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                 // 登录URL
-                .antMatchers("/loginRest/login").permitAll()
+                .antMatchers("/loginRest/login","/loginRest/register").permitAll()
                 // swagger
                 .antMatchers("/swagger**/**").permitAll()
                 .antMatchers("/webjars/**").permitAll()

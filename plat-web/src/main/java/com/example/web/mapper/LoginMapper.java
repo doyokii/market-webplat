@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
  * @author : Zhuang Jialong
  * @description :
  * @date : 2020/11/30 下午 5:47
- * @Copyright: Copyright(c)2019 RedaFlight.com All Rights Reserved
+ * @Copyright: Copyright(c)2020 doyokii/market-webplat All Rights Reserved
  */
 @Mapper
 @Repository
@@ -18,7 +18,7 @@ public interface LoginMapper {
      * @author : Zhuang Jialong
      * @description :
      * @date : 2020/11/30 下午 5:53
-     * @Copyright: Copyright(c)2019 RedaFlight.com All Rights Reserved
+     * @Copyright: Copyright(c)2020 doyokii/market-webplat All Rights Reserved
      */
    int insert (UserInfo userInfo);
    UserInfo findByUsername(UserInfo userInfo);

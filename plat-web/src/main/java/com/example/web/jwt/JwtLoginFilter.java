@@ -25,9 +25,10 @@ import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 
 /**
- * 启动登录认证流程过滤器
- * @author Louis
- * @date Jun 29, 2019
+ * @author : Zhuang Jialong
+ * @description : 启动登录认证流程过滤器
+ * @date : 2020/12/17 下午 5:14
+ * @Copyright: Copyright(c)2020 doyokii/market-webplat All Rights Reserved
  */
 public class JwtLoginFilter extends UsernamePasswordAuthenticationFilter {
 	

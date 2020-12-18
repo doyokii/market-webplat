@@ -12,10 +12,12 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.Serializable;
 import java.util.*;
 
+
 /**
- * JWT工具类
- * @author Louis
- * @date Jun 29, 2019
+ * @author : Zhuang Jialong
+ * @description : JWT工具类
+ * @date : 2020/12/17 下午 5:16
+ * @Copyright: Copyright(c)2020 doyokii/market-webplat All Rights Reserved
  */
 public class JwtTokenUtils implements Serializable {
 
@@ -42,17 +44,16 @@ public class JwtTokenUtils implements Serializable {
      */
     private static final long EXPIRE_TIME = 12 * 60 * 60 * 1000;
 
-    /**
+	/**
 	 * 生成令牌
-	 *
-	 * @param userDetails 用户
+	 * @param authentication 用户
 	 * @return 令牌
 	 */
 	public static String generateToken(Authentication authentication) {
 	    Map<String, Object> claims = new HashMap<>(3);
 	    claims.put(USERNAME, SecurityUtils.getUsername(authentication));
 	    claims.put(CREATED, new Date());
-//	    claims.put(AUTHORITIES, authentication.getAuthorities());
+	    claims.put(AUTHORITIES, authentication.getAuthorities());
 	    return generateToken(claims);
 	}
 
@@ -83,11 +84,11 @@ public class JwtTokenUtils implements Serializable {
 	    }
 	    return username;
 	}
-	
+
 	/**
 	 * 根据请求令牌获取登录认证信息
-	 * @param token 令牌
-	 * @return 用户名
+	 * @param request 用户名
+	 * @return
 	 */
 	public static Authentication getAuthenticationeFromToken(HttpServletRequest request) {
 		Authentication authentication = null;
