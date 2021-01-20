@@ -21,6 +21,7 @@ import javax.servlet.http.HttpServletRequest;
  * @date : 2020/11/28 下午 2:25
  * @Copyright: Copyright(c)2020 doyokii/market-webplat All Rights Reserved
  */
+@CrossOrigin
 @RestController
 @RequestMapping(value = "/loginRest")
 @Api(value = "LoginController|登录控制器")
